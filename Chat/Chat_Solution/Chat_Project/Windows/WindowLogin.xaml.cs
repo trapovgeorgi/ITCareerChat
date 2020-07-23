@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chat_Project.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,7 +39,10 @@ namespace Chat_Project
 
         private void BtnForgotPass_MouseDown(object sender, MouseButtonEventArgs e)
         {
-			MessageBox.Show("Hello!");
+			WindowForgottenPass windowForgottenPass = new WindowForgottenPass();
+			windowForgottenPass.Show();
+			this.Hide();
+
         }
     }
 }

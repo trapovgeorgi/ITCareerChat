@@ -59,10 +59,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WindowLogin.xaml.cs">
+    <Compile Include="Windows\WindowForgottenPass.xaml.cs">
+      <DependentUpon>WindowForgottenPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowRegister.xaml.cs">
+    <Compile Include="Windows\WindowRegister.xaml.cs">
       <DependentUpon>WindowRegister.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -93,17 +96,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="WindowLogin.xaml">
+    <Page Include="Windows\WindowForgottenPass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowRegister.xaml">
+    <Page Include="Windows\WindowLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowRegister.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

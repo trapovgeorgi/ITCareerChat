@@ -24,9 +24,21 @@ namespace Chat_Project
 			InitializeComponent();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			
-		}
-	}
+        private void BtnRegister_Click(object sender, RoutedEventArgs e)
+        {
+			WindowRegister windowRegister = new WindowRegister();
+			windowRegister.Show();
+			this.Hide();
+        }
+
+        private void BtnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnForgotPass_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+			MessageBox.Show("Hello!");
+        }
+    }
 }

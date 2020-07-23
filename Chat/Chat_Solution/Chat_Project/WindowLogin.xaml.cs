@@ -23,5 +23,10 @@ namespace Chat_Project
 		{
 			InitializeComponent();
 		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			
+		}
 	}
 }

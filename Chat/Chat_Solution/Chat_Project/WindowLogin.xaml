@@ -11,7 +11,7 @@
         Background="Transparent"
         Title="Login" Height="500" Width="400">
 
-    <Border CornerRadius="10" BorderThickness="10">
+    <Border CornerRadius="5" BorderThickness="10">
         <Border.BorderBrush>
             <SolidColorBrush Color="White"/>
         </Border.BorderBrush>
@@ -22,28 +22,74 @@
                 <SolidColorBrush Color="White"/>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="160"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" 
-                       Height="40" 
-                       Width="60" 
-                       Margin="0,0,0,70" 
-                       Fill="Black"/>
 
-            <TextBox Grid.Row="1" 
-                     Text="Username..." 
+            <Image Grid.Row="0"
+                   Grid.Column="1"
+                   Source="Logo.png"></Image>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Sign In"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Foreground="#FF0093C3"
+                       FontSize="30"
+                       FontWeight="DemiBold"></TextBlock>
+
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Username" FontSize="14" Foreground="Gray"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="Password" FontSize="14" Foreground="Gray"></TextBlock>
+            <TextBox Grid.Row="3"
+                     Grid.Column="1"
+                     Name="TbUsername"
                      HorizontalAlignment="Left"
                      VerticalAlignment="Center"
-                     Width="380"
+                     Width="300"
                      FontSize="20"
                      BorderThickness="0"
                      />
+            <TextBox Grid.Row="5" 
+                     Grid.Column="1"
+                     Name="TbPassword"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     Width="300"
+                     FontSize="20"
+                     BorderThickness="0"
+                     />
+            <RadioButton Grid.Row="6"
+                         Grid.Column="1"
+                         VerticalAlignment="Center"
+                         Content="Keep me signed in"
+                         Foreground="Gray"
+                         FontSize="14"></RadioButton>
+            
+            <Button Grid.Row="7"
+                    Grid.Column="1" Content="Sign in" Click="Button_Click"
+                    Width="250" Height="50" BorderThickness="0"
+                    FontSize="20" Background="#FF0093C3" HorizontalContentAlignment="Center"
+                    Foreground="White">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
 
         </Grid>
     </Border>

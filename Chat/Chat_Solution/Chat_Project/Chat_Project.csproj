@@ -119,5 +119,11 @@
   <ItemGroup>
     <Resource Include="Windows\Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataHelp\DataHelp.csproj">
+      <Project>{717A87E4-513F-4FDE-AC3E-D3FFFFA5F815}</Project>
+      <Name>DataHelp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataHelp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,8 @@ namespace Chat_Project
 
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
+
+            RegisterService.RegisterUser(TbEmail.Text, TbUsername.Text, TbPassword.Text);
             //if register true
             WindowLogin windowLogin = new WindowLogin();
             windowLogin.Show();

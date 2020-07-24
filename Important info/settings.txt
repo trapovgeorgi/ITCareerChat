@@ -1,0 +1,3 @@
+POs3de1PII - dbusername
+TSij2DKOIg - dbpassword
+remotemysql.com - dbhost

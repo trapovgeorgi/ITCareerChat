@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Chat_Project"
              StartupUri="Windows/WindowLogin.xaml">
     <Application.Resources>
-         
+      
     </Application.Resources>
 </Application>

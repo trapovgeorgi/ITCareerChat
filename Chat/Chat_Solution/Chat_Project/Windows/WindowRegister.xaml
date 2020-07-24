@@ -47,7 +47,7 @@
 
             <Image Source="Logo.png" 
                    Grid.Column="1">
-                
+
             </Image>
             
             <TextBlock Grid.Row="1"

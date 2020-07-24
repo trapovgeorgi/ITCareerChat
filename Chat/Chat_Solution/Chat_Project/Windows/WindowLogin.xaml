@@ -61,6 +61,8 @@
                      Width="300"
                      FontSize="20"
                      BorderThickness="0"
+                     Tag="Type your username here"
+                     
                      />
             <TextBox Grid.Row="5" 
                      Grid.Column="1"

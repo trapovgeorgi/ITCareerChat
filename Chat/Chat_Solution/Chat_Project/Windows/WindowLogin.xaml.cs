@@ -34,7 +34,9 @@ namespace Chat_Project
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-
+			ChatWindow chatWindow = new ChatWindow();
+			chatWindow.Show();
+			this.Hide();
         }
 
         private void BtnForgotPass_MouseDown(object sender, MouseButtonEventArgs e)

@@ -23,8 +23,8 @@
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="25"/>
                 <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -38,7 +38,7 @@
 
             <Image Source="Logo.png"
                    Grid.RowSpan="4"
-                   VerticalAlignment="Center">
+                   VerticalAlignment="Center" Width="100">
                 
             </Image>
 
@@ -53,31 +53,32 @@
             <TextBlock Grid.Row="1" Grid.Column="1"
                        Text="Retype your email for verification:"
                        FontSize="15"
-                       Foreground="Gray"/>
+                       Foreground="Gray"
+                       HorizontalAlignment="Center"/>
 
             <TextBox Name="TbEmail" Grid.Row="2" 
                      Grid.Column="1"
-                     FontSize="17"
+                     FontSize="15"
+                     VerticalAlignment="Center"
                      BorderThickness="0"
-                     FontWeight="DemiBold"
                      Text="Write your email here..."
                      Foreground="DarkGray"
                      MouseEnter="TbEmail_MouseEnter"
-                     />
+                     Margin="20,0"/>
 
             <Button Grid.Row="3" Grid.Column="1" Content="Submit"
                     BorderThickness="0"
                     Foreground="White"
                     Background="#FF0093C3"
                     FontSize="20"
-                    Width="350"
+                    Width="250"
                     Height="40"
                     Name="BtnSubmit"
                     Click="BtnSubmit_Click">
                
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="30"/>
+                        <Setter Property="CornerRadius" Value="20"/>
                     </Style>
                 </Button.Resources>
                 

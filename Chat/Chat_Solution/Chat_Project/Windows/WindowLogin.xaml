@@ -44,6 +44,7 @@
                    Source="Logo.png"></Image>
             <TextBlock Grid.Row="1"
                        Grid.Column="1"
+                       Name="LblSignIn"
                        Text="Sign In"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"

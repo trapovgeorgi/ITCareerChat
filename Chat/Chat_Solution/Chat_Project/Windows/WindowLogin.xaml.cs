@@ -43,6 +43,11 @@ namespace Chat_Project
 				chatWindow.Show();
 				this.Hide();
 			}
+			else
+			{
+				LblSignIn.Foreground = Brushes.Red;
+				LblSignIn.Text = "User not found!";
+			}
 			
         }
 

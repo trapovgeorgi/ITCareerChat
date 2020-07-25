@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DataHelp.Global;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,17 +17,19 @@ namespace DataHelp.Services
 			MySqlConnection connection = new MySqlConnection(dbConnectionString);
 			connection.Open();
 
-			string sqlCommand = $"SELECT username, user_password FROM Users WHERE username = '{username}'";
+			string sqlCommand = $"SELECT id, username, user_password FROM Users WHERE username = '{username}'";
 			MySqlCommand command = new MySqlCommand(sqlCommand, connection);
 
 			MySqlDataReader reader = command.ExecuteReader();
 
 			while (reader.Read())
 			{
-				if (username == reader.GetString(0))
+				if (username == reader.GetString(1))
 				{
-					if (password == reader.GetString(1))
+					if (password == reader.GetString(2))
 					{
+						CurrentUser.Username = reader.GetString(1);
+						CurrentUser.Id = reader.GetInt16(0);
 						return true;
 					}
 				}

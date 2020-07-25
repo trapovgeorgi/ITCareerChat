@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataHelp.Global;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,17 @@ namespace Chat_Project.Windows
 		public ChatWindow()
 		{
 			InitializeComponent();
+			LblUsername.Text = $"{CurrentUser.Username}, '{ CurrentUser.Id}' ";
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			Environment.Exit(0);
+		}
+
+		private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			this.DragMove();
 		}
 	}
 }

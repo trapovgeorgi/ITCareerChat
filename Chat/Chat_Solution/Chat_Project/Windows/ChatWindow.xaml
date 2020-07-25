@@ -22,7 +22,7 @@
                     <SolidColorBrush Color="White"/>
                 </Grid.Background>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="30"/>
                 </Grid.ColumnDefinitions>
@@ -33,10 +33,12 @@
                     <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
 
-                <Rectangle Grid.ColumnSpan="3" Fill="#FF0093C3">
+                <Rectangle Grid.ColumnSpan="3" Fill="#FF0093C3" MouseDown="Rectangle_MouseDown">
 
                 </Rectangle>
-                <Button Height="20" Width="20" 
+
+                <Button Height="15" Width="15"
+                        Margin="0,0,5,0"
                         HorizontalAlignment="Right" 
                         BorderThickness="0" 
                         Background="Transparent" 
@@ -46,13 +48,37 @@
                         Grid.Column="2" 
                         Click="Button_Click"
                         VerticalContentAlignment="Center"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Top">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
+
+
+                <Grid Grid.Row="1" Background="#FF0093C3">
+                    <TextBlock Grid.Row="1" Background="#FF0093C3"
+                               Name="LblUsername"
+                               Text="username"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontWeight="DemiBold"
+                               FontSize="14"
+                               HorizontalAlignment="Center"
+                               />
+                </Grid>
+
+                <ListView Name="LvFriends" Grid.Row="2" 
+                          BorderThickness="0"
+                          Background="LightBlue"></ListView>
+                <ListView Name="LvChat" Grid.Column="1" Grid.Row="2" 
+                          BorderThickness="0"
+                          Background="WhiteSmoke"></ListView>
+
+
+
+
             </Grid>
         </Border>
     </Grid>

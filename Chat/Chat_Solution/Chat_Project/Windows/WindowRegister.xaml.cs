@@ -28,12 +28,20 @@ namespace Chat_Project
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
 
-            RegisterService.RegisterUser(TbEmail.Text, TbUsername.Text, TbPassword.Text);
-            //if register true
-            WindowLogin windowLogin = new WindowLogin();
-            windowLogin.Show();
-            this.Hide();
+            bool registered = RegisterService.RegisterUser(TbEmail.Text, TbUsername.Text, TbPassword.Text);
 
+			if (registered)
+			{
+                WindowLogin windowLogin = new WindowLogin();
+                windowLogin.Show();
+                this.Hide();
+            }
+			else 
+            {
+                LblEmail.Foreground = Brushes.Red;
+                LblEmail.Text = "Check your email!";
+            };
+            
         }
     }
 }

@@ -61,7 +61,7 @@
                 
             </TextBlock>
 
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="Email" FontSize="14" Foreground="Gray"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" Name="LblEmail" Text="Email" FontSize="14" Foreground="Gray"></TextBlock>
             <TextBlock Grid.Row="4" Grid.Column="1" Text="Username" FontSize="14" Foreground="Gray"></TextBlock>
             <TextBlock Grid.Row="6" Grid.Column="1" Text="Password" FontSize="14" Foreground="Gray"></TextBlock>
             <TextBlock Grid.Row="8" Grid.Column="1" Text="Retype Password" FontSize="14" Foreground="Gray"></TextBlock>          

@@ -1,4 +1,5 @@
 ﻿using Chat_Project.Windows;
+using DataHelp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,9 +35,15 @@ namespace Chat_Project
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-			ChatWindow chatWindow = new ChatWindow();
-			chatWindow.Show();
-			this.Hide();
+			bool logged = LoginService.LoginUser(TbUsername.Text, TbPassword.Text);
+
+			if (logged)
+			{
+				ChatWindow chatWindow = new ChatWindow();
+				chatWindow.Show();
+				this.Hide();
+			}
+			
         }
 
         private void BtnForgotPass_MouseDown(object sender, MouseButtonEventArgs e)
@@ -44,7 +51,6 @@ namespace Chat_Project
 			WindowForgottenPass windowForgottenPass = new WindowForgottenPass();
 			windowForgottenPass.Show();
 			this.Hide();
-
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using DataHelp.Global;
+﻿using DataHelp.Chat;
+using DataHelp.Friends;
+using DataHelp.Global;
+using DataHelp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +26,19 @@ namespace Chat_Project.Windows
 		public ChatWindow()
 		{
 			InitializeComponent();
-			LblUsername.Text = $"{CurrentUser.Username}, '{ CurrentUser.Id}' ";
+			PopulateInfo();
+
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+        private void PopulateInfo()
+        {
+			LblUsername.Text = $"{CurrentUser.Username}, '{ CurrentUser.Id}' ";
+
+			PopulateService.PopulateFriendsList();
+			LvFriends.ItemsSource = Friends.FriendsList;
+		}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			Environment.Exit(0);
 		}
@@ -35,5 +47,14 @@ namespace Chat_Project.Windows
 		{
 			this.DragMove();
 		}
-	}
+
+        private void BtnSend_Click(object sender, RoutedEventArgs e)
+        {
+			string friend_username = LvFriends.SelectedItem.ToString();
+			int friend_id = ChatServices.GetIdByUsername(friend_username);
+
+			ChatServices.SendMessage(CurrentUser.Id, friend_id, TbMessage.Text);
+			TbMessage.Text = "";
+		}
+    }
 }

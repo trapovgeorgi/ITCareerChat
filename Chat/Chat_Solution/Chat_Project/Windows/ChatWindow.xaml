@@ -76,8 +76,26 @@
                           BorderThickness="0"
                           Background="WhiteSmoke"></ListView>
 
+                <TextBox Grid.Row="3" Grid.Column="1" 
+                         Name="TbMessage"
+                         Width="450" HorizontalAlignment="Left"
+                         BorderThickness="0"
+                         Background="DarkGray"
+                         VerticalContentAlignment="Center"
+                         FontSize="12"
+                         >
+                </TextBox>
 
-
+                <Button  Grid.Row="3" Grid.Column="1"
+                    Width="150"
+                         Name="BtnSend"
+                         HorizontalAlignment="Right"
+                         Content="Send"
+                         BorderThickness="0"
+                         Background="#FF0093C3"
+                         Click="BtnSend_Click">
+                    
+                </Button>
 
             </Grid>
         </Border>

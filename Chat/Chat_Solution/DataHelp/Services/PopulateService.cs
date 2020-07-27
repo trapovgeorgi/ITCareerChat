@@ -1,43 +1,37 @@
-﻿using DataHelp.Global;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DataHelp.Friends;
 using System.Threading.Tasks;
 
 namespace DataHelp.Services
 {
-	public static class LoginService
-	{
+    public static class PopulateService
+    {
 		private static readonly string dbConnectionString = "Server=remotemysql.com;Database=POs3de1PII;Uid=POs3de1PII;Pwd=TSij2DKOIg;";
 
-		public static bool LoginUser(string username, string password)
+		public static void PopulateFriendsList()
 		{
 			MySqlConnection connection = new MySqlConnection(dbConnectionString);
 			connection.Open();
 
-			string sqlCommand = $"SELECT id, username, user_password FROM Users WHERE username = '{username}'";
+			string sqlCommand = $"SELECT username FROM Users";
 			MySqlCommand command = new MySqlCommand(sqlCommand, connection);
 
 			MySqlDataReader reader = command.ExecuteReader();
 
+			Friends.Friends.FriendsList = new List<string>();
 			while (reader.Read())
-			{
-				if (username == reader.GetString(1))
-				{
-					if (password == reader.GetString(2))
-					{
-						CurrentUser.Username = reader.GetString(1);
-						CurrentUser.Id = reader.GetInt16(0);
-						connection.Close();
-						return true;
-					}
-				}
+			{ 
 
+				Friends.Friends.FriendsList.Add(reader.GetString(0));
 			}
 			connection.Close();
-			return false;
 		}
+
+
+
 	}
 }

@@ -16,7 +16,7 @@ namespace DataHelp.Mail
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            mail.From = new MailAddress("goshotrapov@gmail.com");
+            mail.From = new MailAddress("trianglesoftmusala@gmail.com");
             mail.To.Add(email);
             mail.Subject = $"TriangleSoft congratulates you!";
             mail.Body = $"You Successfuly registered in TriangleSoft, {username}!";

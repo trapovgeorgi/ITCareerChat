@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataHelp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,8 @@ namespace Chat_Project.Windows
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            ForgottenPasswordService.ResetPassword(TbEmail.Text);
+            MessageBox.Show("You got a new email");
             WindowLogin windowLogin = new WindowLogin();
             windowLogin.Show();
             this.Hide();

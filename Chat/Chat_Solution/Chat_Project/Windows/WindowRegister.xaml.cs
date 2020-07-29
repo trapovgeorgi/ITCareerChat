@@ -27,10 +27,14 @@ namespace Chat_Project
 
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
+            bool registered = false;
 
-            bool registered = RegisterService.RegisterUser(TbEmail.Text, TbUsername.Text, TbPassword.Text);
+            if (TbPassword == TbRePassword)
+            {
+                registered = RegisterService.RegisterUser(TbEmail.Text, TbUsername.Text, TbPassword.Password);
+            }
 
-			if (registered)
+            if (registered)
 			{
                 WindowLogin windowLogin = new WindowLogin();
                 windowLogin.Show();
@@ -39,7 +43,7 @@ namespace Chat_Project
 			else 
             {
                 LblEmail.Foreground = Brushes.Red;
-                LblEmail.Text = "Check your email!";
+                LblEmail.Text = "Check your email or password!";
             };
             
         }

@@ -71,7 +71,8 @@
 
                 <ListView Name="LvFriends" Grid.Row="2" 
                           BorderThickness="0"
-                          Background="LightBlue"></ListView>
+                          Background="LightBlue"
+                          SelectionChanged="LvFriends_SelectionChanged"></ListView>
                 <ListView Name="LvChat" Grid.Column="1" Grid.Row="2" 
                           BorderThickness="0"
                           Background="WhiteSmoke"></ListView>
@@ -96,6 +97,18 @@
                          Click="BtnSend_Click">
                     
                 </Button>
+
+                <TextBlock
+                    Grid.Row="1" Grid.Column="1"
+                    Foreground="#FF0093C3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Name="LblChatFriend"
+                    >
+                    
+                    
+                    
+                </TextBlock>
 
             </Grid>
         </Border>

@@ -85,7 +85,7 @@
                      FontSize="20"
                      BorderThickness="0"
                      />
-            <TextBox Grid.Row="7"
+            <PasswordBox Grid.Row="7"
                      
                      Grid.Column="1"
                      Name="TbPassword"
@@ -95,7 +95,7 @@
                      FontSize="20"
                      BorderThickness="0"
                      />
-            <TextBox Grid.Row="9"
+            <PasswordBox Grid.Row="9"
                      
                      Grid.Column="1"
                      Name="TbRePassword"

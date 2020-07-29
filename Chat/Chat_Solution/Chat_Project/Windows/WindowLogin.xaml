@@ -65,7 +65,7 @@
                      Tag="Type your username here"
                      
                      />
-            <TextBox Grid.Row="5" 
+            <PasswordBox Grid.Row="5" 
                      Grid.Column="1"
                      Name="TbPassword"
                      HorizontalAlignment="Left"
@@ -73,13 +73,15 @@
                      Width="300"
                      FontSize="20"
                      BorderThickness="0"
+                     
                      />
             <RadioButton Grid.Row="6"
                          Grid.Column="1"
                          VerticalAlignment="Center"
                          Content="Keep me signed in"
                          Foreground="Gray"
-                         FontSize="14"></RadioButton>
+                         FontSize="14"
+                         Name="RbKeep"></RadioButton>
             
             <Button Grid.Row="7"
                     Grid.Column="1" Content="Sign in" Click="BtnSignIn_Click"

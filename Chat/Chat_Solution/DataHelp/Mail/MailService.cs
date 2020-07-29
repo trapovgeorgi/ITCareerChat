@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace DataHelp.Mail
 {
-	public static class MailService
-	{
-		public static bool SendMailRegisterSuccess(string email, string username)
-		{
+    public static class MailService
+    {
+        public static bool SendMailRegisterSuccess(string email, string username)
+        {
             if (!IsValidEmail(email)) { return false; }
 
             MailMessage mail = new MailMessage();
@@ -20,6 +20,25 @@ namespace DataHelp.Mail
             mail.To.Add(email);
             mail.Subject = $"TriangleSoft congratulates you!";
             mail.Body = $"You Successfuly registered in TriangleSoft, {username}!";
+
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("trianglesoftmusala", "triangle654");
+            SmtpServer.EnableSsl = true;
+
+            SmtpServer.Send(mail);
+            return true;
+        }
+        public static bool SendMailForgottenPassword(string email, string newPassword)
+        {
+            if (!IsValidEmail(email)) { return false; }
+
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("trianglesoftmusala@gmail.com");
+            mail.To.Add(email);
+            mail.Subject = $"TriangleSoft gives you a password!";
+            mail.Body = $"You successfuly forgot your password, and we generated a new one, '{ newPassword }'!";
 
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("trianglesoftmusala", "triangle654");

@@ -29,7 +29,7 @@ namespace Chat_Project
         {
             bool registered = false;
 
-            if (TbPassword == TbRePassword)
+            if (TbPassword.Password == TbRePassword.Password)
             {
                 registered = RegisterService.RegisterUser(TbEmail.Text, TbUsername.Text, TbPassword.Password);
             }
